@@ -1,0 +1,22 @@
+---
+import ProjectCard from './ProjectCard.astro';
+import TFG from '../assets/images/3dworld.png';
+---
+<div class="flex flex-col items-center">
+  <h2 class="text-4xl font-bold mb-6">Projects</h2>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mx-10">
+    <ProjectCard>
+      <span slot="image">
+        <img src={TFG.src} alt="Imagen del proyecto" class="mb-2 rounded" />
+      </span>
+      <span slot="title">Mi Proyecto</span>
+      <span slot="description">Aplicación web desarrollada como Trabajo de Fin de Grado para la gestión integral de recursos relacionados con la impresión 3D dentro de un entorno empresarial. Permite controlar usuarios, impresoras, estaciones de trabajo, filamentos y modelos 3D de forma centralizada, colaborativa y eficiente.
+
+</span>
+      <span slot="links">
+        <a href="#" class="text-blue-500 hover:underline">Ver Proyecto</a>
+      </span>
+    </ProjectCard>
+    <!-- Puedes repetir <ProjectCard> para más proyectos -->
+  </div>
+</div>
