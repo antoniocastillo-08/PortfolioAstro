@@ -1,4 +1,4 @@
-# 🌐 Portfolio Personal - [Tu Nombre]
+# 🌐 Portfolio Personal - Antonio Castillo
 
 ¡Bienvenido/a a mi portfolio personal! Este proyecto está desarrollado con [Astro](https://astro.build/) y [TailwindCSS](https://tailwindcss.com/) con el objetivo de mostrar mis proyectos, habilidades y experiencia profesional. Actualmente sigue en desarrollo y planeo implementar nuevas funcionalidades y mejoras de diseño en futuras versiones.
 
