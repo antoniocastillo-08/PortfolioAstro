@@ -1,14 +1,24 @@
-<div class="bg-blue-900 shadow-lg rounded-lg p-6">
-  <div class="mb-2 rounded overflow-hidden w-24 h-24 mx-auto filter blur-sm brightness-75 hover:blur-none transition-all duration-300">
+<div class="bg-blue-900 shadow-lg rounded-lg w-80 h-96 flex flex-col overflow-hidden group relative p-0">
+  <!-- Imagen: visible solo cuando NO hay hover -->
+  <div class="w-full h-20 filter brightness-75 transition-all duration-300 group-hover:opacity-0 group-hover:pointer-events-none absolute top-0 left-0">
     <slot name="image" />
   </div>
-  <h3 class="text-xl font-semibold mb-2">
-    <slot name="title" />
-  </h3>
-  <p class="text-white mb-4">
-    <slot name="description" />
-  </p>
-  <div>
-    <slot name="links" />
+  <!-- Contenido principal -->
+  <div class="flex flex-col items-center justify-center h-full pt-10 px-6">
+    <h3 class="text-xl font-semibold mb-2 z-10">
+      <slot name="title" />
+    </h3>
+    <!-- Skills: siempre visibles -->
+    <div class="flex gap-2 mb-2">
+      <slot name="skills" />
+    </div>
+    <!-- Descripción: solo visible en hover -->
+    <p class="text-white text-sm mt-2 max-h-32 overflow-y-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300 absolute top-20 left-0 w-full px-6">
+      <slot name="description" />
+    </p>
+    <!-- Links: siempre visibles -->
+    <div class="mt-1 z-10">
+      <slot name="links" />
+    </div>
   </div>
 </div>
