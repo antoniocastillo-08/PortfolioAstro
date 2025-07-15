@@ -1,16 +1,23 @@
-<div class="bg-blue-800 shadow-lg rounded-lg flex flex-col">
-    <div class="flex-1 p-4">
-        <slot name="image" class="h-80 w-10"></slot>
+<div
+    class="bg-blue-800 h-full w-80 shadow-lg overflow-hidden rounded-lg flex flex-col transition-transform duration-300 hover:scale-110"
+>
+    <div class="p-4">
+        <div class="w-full flex justify-center">
+            <slot name="image" />
+        </div>
         <h3 class="text-xl font-semibold mt-2">
-            <slot name="title"></slot>
+            <slot name="title" />
         </h3>
         <p class="text-gray-400 mt-2">
-            <slot name="description"></slot>
+            <slot name="description" />
         </p>
-        <div class="flex flex-row gap-2 items-center mt-4">
-            <slot name="skills"></slot>
+        <div
+            class="flex flex-row gap-2 items-center mt-4 justify-center flex-wrap"
+        >
+            <slot name="skills" />
         </div>
-      
-      
- 
-  </div>
+        <div class="mt-4 text-center">
+            <slot name="links" />
+        </div>
+    </div>
+</div>
