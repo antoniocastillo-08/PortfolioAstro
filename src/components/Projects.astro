@@ -8,6 +8,7 @@ import { isAstroComponentInstance } from 'astro/runtime/server/render/astro/inst
   <h2 class="text-4xl font-bold mb-6">Projects</h2>
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mx-10">
 
+    <!--Proyecto TFG 3dWorld -->
     <ProjectCard>
       <span slot="image">
         <img src={TFG.src} alt="Imagen del proyecto" class="mb-2 rounded" />
@@ -19,8 +20,10 @@ import { isAstroComponentInstance } from 'astro/runtime/server/render/astro/inst
       </span>
 
       <span slot="skills">
-        <span set:html={icons.github}/>
-        <span set:html={icons.laravel}/>
+        <span set:html={icons.laravel} />
+      </span>
+      <span slot="skills">
+        <span set:html={icons.github} />
       </span>
       
       <span slot="links">
@@ -28,6 +31,7 @@ import { isAstroComponentInstance } from 'astro/runtime/server/render/astro/inst
         rel="noopener noreferrer" class="text-blue-500 hover:underline">Ver Proyecto</a>
       </span>
     </ProjectCard>
+
 
     <ProjectCard>
       <span slot="image">
