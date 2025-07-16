@@ -2,6 +2,7 @@
 import * as icons from './techIcons.js';
 import ProjectCard from './ProjectCard.astro';
 import TFG from '../assets/images/3dworld.png';
+import IconGame from '../assets/images/androidgame.png';
 import { isAstroComponentInstance } from 'astro/runtime/server/render/astro/instance.js';
 ---
 <div class="flex flex-col items-center">
@@ -14,59 +15,77 @@ import { isAstroComponentInstance } from 'astro/runtime/server/render/astro/inst
         <img src={TFG.src} alt="Imagen del proyecto" class="mb-2 rounded" />
       </span>
       <span slot="title">3dWorld</span>
-      <span slot="description">Aplicación web desarrollada como 
-        Trabajo de Fin de Grado para la gestión integral de recursos 
-        relacionados con la impresión 3D dentro de un entorno empresarial. 
+      <span slot="description">
+        Web app developed as a Final Degree Project for the comprehensive 
+        management of resources related to 3D printing within a business environment.
       </span>
 
-      <span slot="skills">
+      <span slot="skills" class="w-10 h-10">
         <span set:html={icons.laravel} />
       </span>
      
-      <span slot="skills">
+      <span slot="skills" class="w-10 h-10">
         <span set:html={icons.tailwind} />
       </span>
-            <span slot="skills">
+            <span slot="skills" class="w-10 h-10">
         <span set:html={icons.mysql} />
       </span>
-      </span>
-            <span slot="skills">
+      <span slot="skills" class="w-10 h-10">
         <span set:html={icons.vite} />
       </span>
+      <span slot="links">
+        <a href="https://github.com/antoniocastillo-08/3dWorld" target="_blank" rel="noopener noreferrer" class="text-blue-500 hover:underline">Ver Proyecto</a>
+      </span>
+    </ProjectCard>
+
+
+    <ProjectCard>
       
-    </ProjectCard>
-
-
-    <ProjectCard>
-      <span slot="image">
-        <img src="https://via.placeholder.com/150" alt="Imagen del proyecto" class="mb-2 rounded" />
+      <span slot="title">EventsApp</span>
+      <span slot="description">Web application developed for event management. 
+        Allows users to register, create events, sign up, and manage them from an intuitive panel. 
+        Uses the MVC pattern, user authentication, and Eloquent relationships.
       </span>
-      <span slot="title">Otro Proyecto</span>
-      <span slot="description">Descripción breve del proyecto.</span>
+      <span slot="skills" class="w-10 h-10">
+        <span set:html={icons.laravel} />
+      </span>
+      <span slot="skills" class="w-10 h-10">
+        <span set:html={icons.mysql} />
+      </span>
       <span slot="links">
-        <a href="#" target="_blank" rel="noopener noreferrer" class="text-blue-500 hover:underline">Ver Proyecto</a>
-      </span>
-    </ProjectCard>
-
-    <ProjectCard>
-      <span slot="image">
-        <img src="https://via.placeholder.com/150" alt="Imagen del proyecto" class="mb-2 rounded" />
-      </span>
-      <span slot="title">Tercer Proyecto</span>
-      <span slot="description">Descripción breve del tercer proyecto.</span>
-      <span slot="links">
-        <a href="#" target="_blank" rel="noopener noreferrer" class="text-blue-500 hover:underline">Ver Proyecto</a>
+        <a href="https://github.com/antoniocastillo-08/EventosAppRepo" target="_blank" rel="noopener noreferrer" class="text-blue-500 hover:underline">Ver Proyecto</a>
       </span>
     </ProjectCard>
 
     <ProjectCard>
       <span slot="image">
-        <img src="https://via.placeholder.com/150" alt="Imagen del proyecto" class="mb-2 rounded" />
+        <img src={IconGame.src} alt="Imagen del proyecto" class="mb-2 rounded" />
       </span>
-      <span slot="title">Cuarto Proyecto</span>
-      <span slot="description">Descripción breve del cuarto proyecto.</span>
+      <span slot="title">Android Studio Game </span>
+      <span slot="description">Platform game developed in AndroidStudio with Java</span>
+      
+      <span slot="skills" class="w-10 h-10">
+        <span set:html={icons.android} />
+      </span>
+      <span slot="skills" class="w-10 h-10">
+        <span set:html={icons.java} />
+      </span>
+      
       <span slot="links">
-        <a href="#" target="_blank" rel="noopener noreferrer" class="text-blue-500 hover:underline">Ver Proyecto</a>
+        <a href="https://github.com/antoniocastillo-08/AndroidStudioGame" target="_blank" rel="noopener noreferrer" class="text-blue-500 hover:underline">Ver Proyecto</a>
+      </span>
+
+    </ProjectCard>
+
+    <ProjectCard>
+      <span slot="title">Microservices- Hotel Booking Website </span>
+      <span slot="description">Practicing microservices with Springboot and developed with IntelliJ.</span>
+      
+      <span slot="skills" class="w-10 h-10">
+        <span set:html={icons.java} />
+      </span>
+      <span slot="links">
+        <a href="https://github.com/antoniocastillo-08/PSPMicroservicios-ProyectoFinalReservas" target="_blank" rel="noopener noreferrer" class="text-blue-500 hover:underline">Ver Proyecto</a>
       </span>
     </ProjectCard>
 
