@@ -1,0 +1,47 @@
+
+
+<div id="computer-3d" class="w-[300px] h-[300px]"></div>
+
+<script type="module" is:inline>
+  import * as THREE from 'three';
+
+  const container = document.getElementById('computer-3d');
+  if (container) {
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(75, 1, 0.1, 1000);
+    camera.position.z = 4;
+
+    const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+    renderer.setSize(300, 300);
+    container.appendChild(renderer.domElement);
+
+    // "Pantalla" del ordenador
+    const screenGeometry = new THREE.BoxGeometry(2, 1.2, 0.1);
+    const screenMaterial = new THREE.MeshStandardMaterial({ color: 0x222e50 });
+    const screen = new THREE.Mesh(screenGeometry, screenMaterial);
+    screen.position.y = 0.4;
+    scene.add(screen);
+
+    // "Base" del ordenador
+    const baseGeometry = new THREE.BoxGeometry(2, 0.1, 1);
+    const baseMaterial = new THREE.MeshStandardMaterial({ color: 0x3a506b });
+    const base = new THREE.Mesh(baseGeometry, baseMaterial);
+    base.position.y = -0.3;
+    base.position.z = -0.45;
+    scene.add(base);
+
+    // Luz
+    const light = new THREE.DirectionalLight(0xffffff, 1);
+    light.position.set(2, 2, 5);
+    scene.add(light);
+
+    // Animación de rotación
+    function animate() {
+      requestAnimationFrame(animate);
+      screen.rotation.y += 0.01;
+      base.rotation.y += 0.01;
+      renderer.render(scene, camera);
+    }
+    animate();
+  }
+</script>

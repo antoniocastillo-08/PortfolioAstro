@@ -1,12 +1,82 @@
 ---
-import profileImg from '../assets/images/profile.webp';
+import profileImg from "../assets/images/profile.webp";
 ---
-<div class="flex justify-center items-center w-auto md:flex-row flex-col">
-<div>    
-<h1 class="mx-10 text-6xl font-bold">Antonio Castillo</h1>
-<h4 class="mx-10 text-2xl font-semibold text-gray-500">Full Stack Developer</h4>
+
+<div
+    class="flex justify-around items-center w-auto md:flex-row flex-col
+        rounded-4xl p-8 h-full"
+>
+    <div>
+        <h3 class="mx-10 text-2xl font-semibold">Hello, I'm</h3>
+        <h1 class="mx-10 text-7xl font-bold">Antonio Castillo</h1>
+        <h4 class="mx-10 text-4xl font-semibold text-gray-500">
+            Full Stack Developer
+        </h4>
+        <p
+            class="mx-10 mt-2 text-xl font-mono font-bold text-green-500 typewriter"
+        >
+            Working, creating, and learning.
+        </p>
+    </div>
+
+    <img
+        src={profileImg.src}
+        alt="Logo"
+        loading="lazy"
+        class="w-100 h-100 rounded-full border-4 border-gray-900 overflow-hidden
+        transition-transform duration-300 hover:scale-110"
+    />
 </div>
-<img src={profileImg.src} alt="Logo" loading="lazy" 
-class="w-80 h-80 rounded-full border-4 border-gray-900 overflow-hidden
-transition-transform duration-300 hover:scale-110 md: mt-10" />
-</div>
+
+<style>
+    .typewriter {
+        overflow: hidden;
+        border-right: 0.15em solid #fff;
+        white-space: nowrap;
+        animation:
+            typing 3s steps(14, end) 1s infinite,
+            blink-caret 0.75s step-end infinite;
+    }
+
+    @keyframes typing {
+        from {
+            width: 0;
+        }
+        to {
+            width: 38ch;
+        }
+    }
+    @keyframes md:typing {
+        from {
+            width: 0;
+        }
+        to {
+            width: 30ch;
+        }
+    }
+    @keyframes blink-caret {
+        from,
+        to {
+            border-color: transparent;
+        }
+        50% {
+            border-color: #fff;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .typewriter {
+            animation:
+                typing-sm 3s steps(18, end) 1s infinite,
+                blink-caret 0.75s step-end infinite;
+        }
+        @keyframes typing-sm {
+            from {
+                width: 0;
+            }
+            to {
+                width: 18ch;
+            }
+        }
+    }
+</style>
