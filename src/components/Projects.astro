@@ -112,7 +112,6 @@ import { isAstroComponentInstance } from 'astro/runtime/server/render/astro/inst
         <span set:html={icons.java} />
       </span>
       
----s
       <span slot="links">
         <a href="https://github.com/antoniocastillo-08/AndroidStudioGame" target="_blank" rel="noopener noreferrer" class="text-blue-500 hover:underline">Ver Proyecto</a>
       </span>
@@ -120,3 +119,17 @@ import { isAstroComponentInstance } from 'astro/runtime/server/render/astro/inst
     </ProjectCard>
   </div>
 </div>
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('opacity-100', '-translate-y-0');
+        entry.target.classList.remove('opacity-0', 'translate-y-10');
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.project-card').forEach(card => {
+
+    observer.observe(card);
+  });
+</script>

@@ -1,29 +1,32 @@
 ---
 import profileImg from "../assets/images/profile.webp";
+import Computer3D from "./Computer3D.astro";
 ---
 
 <div
+    id="main-header"
     class="flex justify-around items-center w-auto md:flex-row flex-col
         rounded-4xl p-8 h-full"
 >
     <div>
-        <h3 class="mx-10 text-2xl font-semibold">Hello, I'm</h3>
-        <h1 class="mx-10 text-7xl font-bold">Antonio Castillo</h1>
-        <h4 class="mx-10 text-4xl font-semibold text-gray-500">
+        <h3 class="mx-10 text-4xl font-semibold">Hello, I'm</h3>
+        <h1 class="mx-10 text-8xl font-bold">Antonio Castillo</h1>
+        <h4 class="mx-10 text-4xl font-semibold text-gray-500 mb-30">
             Full Stack Developer
         </h4>
         <p
-            class="mx-10 mt-2 text-xl font-mono font-bold text-green-500 typewriter"
+            class="animatim  mx-10 mt-2 text-xl font-mono font-bold text-green-500 typewriter"
         >
             Working, creating, and learning.
         </p>
     </div>
 
+    <Computer3D />
     <img
         src={profileImg.src}
         alt="Logo"
         loading="lazy"
-        class="w-100 h-100 rounded-full border-4 border-gray-900 overflow-hidden
+        class="w-120 h-120 rounded-full border-4 border-gray-900 overflow-hidden
         transition-transform duration-300 hover:scale-110"
     />
 </div>
@@ -64,19 +67,19 @@ import profileImg from "../assets/images/profile.webp";
         }
     }
 
-    @media (max-width: 768px) {
-        .typewriter {
-            animation:
-                typing-sm 3s steps(18, end) 1s infinite,
-                blink-caret 0.75s step-end infinite;
-        }
-        @keyframes typing-sm {
-            from {
-                width: 0;
-            }
-            to {
-                width: 18ch;
-            }
-        }
-    }
 </style>
+<script>
+  window.addEventListener('scroll', () => {
+    const header = document.getElementById('main-header');
+    if (!header) return;
+    // Ajusta el valor 200 para controlar cuándo empieza a desvanecerse
+    const fadeStart = 0;
+    const fadeEnd = 200;
+    const scrollY = window.scrollY;
+    let opacity = 1;
+    if (scrollY > fadeStart) {
+      opacity = 1 - Math.min((scrollY - fadeStart) / (fadeEnd - fadeStart), 1);
+    }
+    header.style.opacity = opacity.toString();
+  });
+</script>
